@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/style.css" rel="stylesheet">
+
+    <title>Exames</title>
+	
+  </head>
+  <body>
+	
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-header">Exames</h5>
+			<div class="form-group col-md-4 esquerda">
+				<div class="form-group">
+					<label>Paciente</label>
+					<select id="pacientes" class="form-control">
+						<option>Selecione</option>
+						<option onclick="preencher()">Pedro Barbosa Correa</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>RGHC</label>
+					<input id="rghc" type="text" maxlength="30" value="" class="form-control">
+				</div>
+			</div>
+			<div class="form-group col-md-4 direita">
+				</br>
+				<table border="2">
+					<caption>Exames Solicitados</caption>
+					<tr>
+						<th class="linhaTabela">Nome</th>
+						<th class="linhaTabela">Data</th>
+						<th class="linhaTabela">Resultado Registrado</th>
+					</tr>
+					<tr id="linha1" onclick="changeBgColor(this);show(dresultado);hide(inserir);" style="cursor: hand;" value="">
+						<td>RM</td>
+						<td>14/06/2018</td>
+						<td>Sim</td>
+					</tr>
+					<tr id="linha2" onclick="changeBgColor(this);show(inserir);hide(dresultado);" style="cursor: hand;" value="" >
+						<td>TCC</td>
+						<td>04/01/2019</td>
+						<td>Não</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	<div class="card">
+		<div class="card-body">
+			<div class="form-row">
+				<div id="inserir" class="invisivel col-md-4 direita">
+					<legend>Inserir Resultado</legend>
+					<label>Nome Exame:</label>
+					<label>TCC</label>
+					</br>
+					<label>Resultado:</label>
+					</br>
+					<input type="radio" name="grupo" value="Não" onclick="hide(alterado)"> Normal</input>
+					<input type="radio" name="grupo" value="Sim" onclick="show(alterado)"> Alterado
+						<ul id="alterado" class="list-unstyled invisivel"> 
+							<li><input name="cboContusao" type="checkbox" onclick="hide(inescondido)"> Contusão</li>
+							<li><input name="cboHemorragia" type="checkbox" onclick="hide(inescondido)"> Hemorragia Sub-aracnóidea </li>
+							<li><input name="cboFratura" type="checkbox" onclick="hide(inescondido)"> Fratura de crânio </li>
+							<li><input name="cboAfundamento" type="checkbox" onclick="hide(inescondido)"> Afundamento</li>
+							<li><input name="cboOutros" type="checkbox" onclick="show(inescondido)"> Outros</li>
+							<div id="inescondido" class="invisivel">
+								<input type="text" class="form-control">
+							</div>
+						</ul>
+					<button class="btn btn-primary btn-lg">Registrar Resultado</button>
+				</div>
+				<div id="dresultado" class="invisivel col-md-4 esquerda">
+					<legend>Resultado</legend>
+					<label>Nome Exame:</label>
+					<label>RM</label>
+					</br>
+					</br>
+					<label>Resultado:</label>
+					</br>
+					</br>
+					<label>Alterado</label>
+					</br>
+					<label>Contusão Occipital</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	</br>
+	<div class="direita">
+		<button class="btn btn-primary btn-lg">Solicitar Novo</button>
+	</div>
+	
+	
+	
+	<style>
+		.row-clicked {
+			background-color: #CEF6F5;
+		}
+	</style>
+	
+	<script type="text/javascript">
+    function changeBgColor(element) {
+        if(element.className === 'row-clicked') {
+            element.className = '';
+			element.value = 'desativada';
+        } else {
+            element.className = 'row-clicked';
+			element.value = 'ativada';
+        }
+    }
+	</script>
+	
+	<script type="text/javascript">
+    function preencher() {
+	
+		jQuery("#pacientes").change(function(){
+			document.getElementById("rghc").value = 7617254623543;
+		});
+	}
+
+	</script>
+	
+	<script>
+		function show(element){
+			element.className = "visivel";
+		}
+	</script>
+	
+	<script>
+		function hide(element){
+			element.className = "invisivel";
+		}
+	</script>
+	
+	<script src="js/jquery.js"></script>
+    <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+    <script src="js/bootstrap.min.js"></script>
+	
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/style.css" rel="stylesheet">
+
+	<title>Solicitação de Exames</title>
+	
+  </head>
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #e3f2fd;">
+			<a class="navbar-brand">ARCO - Consulta</a>
+			
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+			  <li class="nav-item active">
+				<a class="nav-link" href="">Início <span class="sr-only">(current)</span></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="Consulta.html">Consulta</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="Medicacao.html">Medicação</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">Testes</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">Escalas</a>
+			  </li>
+	    	</ul>
+	    </div>	
+	</nav>
+	<br/><br/><br/>
+
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-header">Solicitação de Exames</h5>
+			</br>
+			<div class="card-deck">
+				<div class="card">
+				    <div class="card-body">
+				    	<h5 class="card-title">Neuroimagem</h5>
+				    	<ul>
+							<li><input type="radio" name="grupo3" value="" onclick="hide(escondido)"> Não</li>
+							<li><input type="radio" name="grupo3" value="" onclick="show(escondido)"> Sim
+								<ul id="escondido" class="invisivel">
+									<li><input name="cboRM" type="checkbox"> RM</li>
+									<li><input name="cboTCC" type="checkbox"> TCC</li>
+								</ul>
+							</li>
+						</ul>
+				    </div>
+				 </div>
+					<div class="card">
+		    		<div class="card-body">
+		      			<h5 class="card-title">Sanguíneos</h5>
+		      			<ul>
+							<li><input type="radio" name="grupo4" value=""> Não</li>
+							<li><input type="radio" name="grupo4" value=""> Sim</li>
+					</ul>
+		   			</div>
+		  		</div>
+		  		<div class="card">
+		    		<div class="card-body">
+		      			<h5 class="card-title">De líquor</h5>
+		      			<ul>
+							<li><input type="radio" name="grupo5" value=""> Não</li>
+							<li><input type="radio" name="grupo5" value=""> Sim</li>
+					</ul>
+		    		</div>
+	  			</div>
+	  		</div>
+	  	</br>
+		  	<div class="card-deck">
+		  		<div class="card">
+		  			<div class="card-body">
+		  				<h5 class="card-title">SPECT</h5>
+		  				<ul>
+							<li><input type="radio" name="grupo6" value=""> Não</li>
+							<li><input type="radio" name="grupo6" value=""> Sim</li>
+						</ul>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">EEG</h5>
+						<ul>
+							<li><input type="radio" name="grupo7" value=""> Não</li>
+							<li><input type="radio" name="grupo7" value=""> Sim</li>
+						</ul>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Outro Exame</h5>
+						<input type="text" name="" class="form-control">
+					</div>
+				</div>
+			</div>	
+			
+			</br></br>		
+
+			<div class="form" style="width: 96%;">
+				<a href="Acompanhante.html">
+				<button id="seguir" class="btn btn-primary btn-lg">Solicitar</button>
+			</div>
+
+			</div>
+		</div>
+	</div>
+
+	
+	<script>
+		function show(element){
+			element.className = "visivel";
+		}
+	</script>
+	
+	<script>
+		function hide(element){
+			element.className = "invisivel";
+		}
+	</script>
+	
+	<script src="js/jquery.js"></script>
+
+    <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
+	
