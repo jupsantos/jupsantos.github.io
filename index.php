@@ -1,3 +1,3 @@
 <?php
-  include_once("Forms/index.html");
+  include_once("index.html");
 ?>
