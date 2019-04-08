@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/style.css" rel="stylesheet">
+
+	<title>Cálculo de Nível Socioeconômico</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #e3f2fd;">
+		<a class="navbar-brand">ARCO - Paciente</a>
+		
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+		<ul class="navbar-nav mr-auto">
+		  <li class="nav-item active">
+			<a class="nav-link" href="../index.html">Início <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="Paciente.html">Informações Pessoais</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="QueixasAtuais.html">Queixas</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="Acompanhante.html">Acompanhante</a>
+		  </li>
+		</ul>
+	</nav>
+	
+	<br/><br/><br/>
+
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-header">Nível Socioeconômico</h5>
+			</br>
+
+			<div class="card-deck">
+				<div class="card">
+				    <div class="card-body">
+				    	<h5 class="card-title">Instrução</h5>
+				    	<ul class="list-unstyled">
+							<li><input type="radio" name="grupo1" value="0">  Analfabeto / Primário incompleto</li>
+							<li><input type="radio" name="grupo1" value="5">  Primário completo / Ginasial incompleto</li>
+							<li><input type="radio" name="grupo1" value="10">  Ginasial completo / Colegial incompleto</li>
+							<li><input type="radio" name="grupo1" value="15">  Colegial completo / Superior incompleto</li>
+							<li><input type="radio" name="grupo1" value="21">  Superior completo</li>
+						</ul>
+				    </div>
+				 </div>
+					<div class="card">
+		    		<div class="card-body">
+		      			<h5 class="card-title">Itens de Posse</h5>
+							
+							<div class="form-row">
+									<label>Automóvel</label>
+									<input type="radio" id="1auto" value="4"> 1
+									<input type="radio" id="2auto" value="9"> 2
+									<input type="radio" id="3auto" value="13"> 3
+									<input type="radio" id="4auto" value="18"> 4
+									<input type="radio" id="5auto" value="22"> 5
+									<input type="radio" id="6auto" value="26"> Mais de 6
+							</div>
+		   			</div>
+		  			</div>
+
+		</div>
+	</div>
+
+	<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+    <script src="js/jquery.js"></script>
+    <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

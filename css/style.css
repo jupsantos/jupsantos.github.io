@@ -1,0 +1,131 @@
+body.center-form {
+	min-height: 100vh;
+}
+
+div.center-form {
+	position: relative;
+	min-height: 100vh;
+}
+
+div.center-form > form {
+	background-color: #e3f2fd;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+}
+
+#colorir {
+	background-color: #e3f2fd;
+}
+
+#seguir {
+	float:right;
+}
+
+#end {
+	float:left;
+}
+
+#tel {
+	float:right;
+}
+
+#calcular {
+	float:right;
+}
+
+.visivel {
+	visibility:visible;
+}
+.invisivel {
+	visibility:hidden;
+}
+
+div.direita {
+	float:right;
+	width: 48%;
+}
+
+div.esquerda {
+	float:left;
+	width: 48%;
+}
+
+.linhaTabela {
+	background-color:#5882FA;
+	color:white;
+}
+
+.center {
+	width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+.box {
+	width: 120vw;
+	height: 500px;
+	margin-left: 25%;
+	margin-right: 25%
+	margin-top: 50px;
+}
+
+table.agenda {
+	width: 70%;
+}
+
+tr.mudarCor {
+	color: red;
+}
+
+.fontDate {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	margin-right: 20px;
+	float: right;
+}
+
+.topoDireito {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 200px;
+	top: 70px;
+}
+
+.margemEsquerda {
+	margin-left: 20px;
+}
+
+.margemDireita {
+	margin-right: 20px;
+}
+
+.quadrado {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+*::after {
+  box-sizing: border-box; 
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+
+}

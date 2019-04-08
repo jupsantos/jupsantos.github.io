@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+  <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/style.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <title>Anamnese</title>
+  </head>
+  <body>
+	<nav id="colorir" class="navbar navbar-expand-md navbar-light fixed-top">
+		<a class="navbar-brand">ARCO - Anamnese</a>
+		
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+		<ul class="navbar-nav mr-auto">
+		  <li class="nav-item active">
+			<a class="nav-link" href="">Início <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="Consulta.html">Consulta</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="Exame.html">Exames</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="Medicacao.html">Medicação</a>
+		  </li>
+		</ul>
+	</nav>
+	<br/><br/><br/>
+	
+	<div class="card">
+		<div class="card-body">
+		<h5 class="card-header">Informações</h5>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label>Breve descrição:</label>
+					<textarea type="text" class="form-control" style="width: 80%"></textarea>
+				</div>
+				<div class="form-group col-md-6">
+					<label>Data do evento principal:</label>
+					<input type="text" class="form-control" placeholder="Ex.: dd/mm/aaaa" data-mask="00/00/0000" maxlength="10" autocomplete="off" style="width: 50%">
+				</div>
+
+				
+			</div>
+			
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label>Causa do acidente:</label>
+					<ul class="list-unstyled">
+						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Conflito interpessoal (domicílio)</li>
+						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Conflito interpessoal (via pública)</li>
+						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Acidente de trânsito (atropelamento - pedestre)</li>
+						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Acidente de trânsito (motorista ou passageiro - dentro do veículo)</li>
+						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Acidente de trânsito (atropelamento - moto)</li>
+						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Acidente de trânsito (bicicleta)</li>
+						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Acidente doméstico (queda de objeto sobre a pessoa)</li>
+						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Acidente doméstico (queda de algum lugar ou própria altura)</li>
+						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Acidente de trabalho (queda de objeto sobre a pessoa ou queda de algum lugar)</li>
+						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Não há informação</li>
+						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Não se aplica</li>
+						<li><input type="radio" name="grupo2" value="" onclick="show(inescondido)"> Outro (outra situação de acidente de trânsito)</li>
+						<div id="inescondido" class="invisivel">
+							<input type="text" class="form-control">
+						</div>
+					</ul>
+				</div>
+				<div class="form-group col-md-6">
+					<div>
+						<label>Associação do TCE com uso de álcool:</label>
+						<ul class="list-unstyled">
+							<li><input type="radio" name="grupo3" value=""> Sim - TCE foi ou pode ter sido consequência da ingestão de álcool</li>
+							<li><input type="radio" name="grupo3" value=""> Não - não se sabe se pode ter havido correlação</li>
+							<li><input type="radio" name="grupo3" value=""> Não há informação</li>
+							<li><input type="radio" name="grupo3" value=""> Não tem certeza</li>
+						</ul>
+						<label>Tipo de acidente:</label>
+						<ul class="list-unstyled">
+							<li><input type="radio" name="grupo1" value=""> Civil</li>
+							<li><input type="radio" name="grupo1" value=""> Esportivo</li>
+							<li><input type="radio" name="grupo1" value=""> Militar</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-row">
+			<div class="form-group col-md-3 quadrado">
+				<label>Perda de consciência:</label>
+				<form>
+				<ul class="list-unstyled">
+					<li><input type="radio" id="nao7" name="grupo7" value="anteriores-nao" onclick="hide(divescondido), hide(divescondido1), hide(divescondido2)"> Não</li>
+					<li><input type="radio" id="sim7" name="grupo7" value="anteriores-sim" onclick="show(divescondido)"> Sim</li>
+					<div id="divescondido" class="invisivel">
+						<ul class="list-unstyled">
+							<li><input type="radio" name="grupo8" onclick="show(divescondido1), hide(divescondido2)">Tempo em horas</li>
+								<div id="divescondido1" class="invisivel">
+									<input type="number" name="qtdHoras" class="form-control">
+								</div>
+							<li><input type="radio" name="grupo8" onclick="show(divescondido2), hide(divescondido1)">Outro</li>
+								<div id="divescondido2" class="invisivel">
+									<input type="text" name="" class="form-control">
+								</div>
+						</ul>
+					</div>
+				</ul>
+				</form>
+			</div>
+			<div class="form-group col-md-4 quadrado">
+				<label>Amnésia pós-traumática:</label>
+				<form>
+				<ul class="list-unstyled">
+					<li><input type="radio" id="nao7" name="grupo7" value="amnesia-nao" onclick="hide(divescondido3)"> Não</li>
+					<li><input type="radio" id="sim7" name="grupo7" value="amnesia-sim" onclick="show(divescondido3)"> Sim</li>
+						<div id="divescondido3" class="form-row invisivel">
+							<div class="form-group col-md-5">
+								<label>Quanto tempo:</label>
+								<input type="number" name="" class="form-control" min="0">
+							</div>
+							<div class="form-group col-md-5">
+								<label>Tipo:</label>
+								<select id="tipo" class="form-control">
+									<option>Selecione</option>
+									<option>Minutos</option>
+									<option>Horas</option>
+									<option>Dias</option>
+									<option>Semanas</option>
+									<option>Meses</option>
+									<option>Anos</option>
+								</select>
+							</div>
+						</div>
+				</ul>
+				</form>
+			</div>
+
+			<div class="form-group col-md-3 quadrado">
+				<label>Submissão a procedimento neurocirúrgico:</label>
+				<form>
+				<ul class="list-unstyled">
+					<li><input type="radio" id="nao7" name="grupo9" value="cirurgico-nao" onclick="hide(divescondido4)"> Não</li>
+					<li><input type="radio" id="nao7" name="grupo9" value="cirurgico-nao-lembra" onclick="hide(divescondido4)"> Não se lembra</li>
+					<li><input type="radio" id="sim7" name="grupo9" value="cirurgico-sim" onclick="show(divescondido4)"> Sim</li>
+					<div id="divescondido4" class="invisivel">
+						<label>Qual?</label>
+						<select id="tipo" class="form-control">
+									<option>Selecione</option>
+									<option>Descompressão do crânio</option>
+								</select>
+					</div>
+				</ul>
+				</form>
+			</div>
+		</div>
+
+		<div class="center">
+			<table class="table table-striped table-hover agenda">
+				<thead>
+				    <tr>
+				    	<th scope="col">Descrição</th>
+				    	<th scope="col">Data</th>
+				    	<th scope="col">Causa</th>
+				    	<th scope="col">Associação com álcool</th>
+				    	<th scope="col">Tipo de acidente</th>
+				    	<th scope="col">Tempo de perda de consciência</th>
+				    	<th scope="col">Tempo de amnésia</th>
+				    	<th scope="col">Procedimento neurocirúrgico</th>
+				    </tr>
+				</thead>
+				<tbody>
+				    <tr onclick="" class="">
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    </tr>
+				    <tr onclick="" class="">
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    </tr>
+				    <tr onclick="">
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    	<td></td>
+				    </tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div class="form-row">
+			<div class="form-group col-md-4">
+				<a href="">
+				<button id="seguir" class="btn btn-outline-primary">Adicionar TCE anterior</button></a>
+			</div>
+			<div class="form-group col-md-5">
+				<a href="">
+				<button id="seguir" class="btn btn-primary btn-lg">Prosseguir</button></a>
+			</div>
+		</div>
+
+	</div>
+			
+	<script>
+		function show(element){
+			element.className = "visivel";
+		}
+	</script>
+	
+	<script>
+		function hide(element){
+			element.className = "invisivel";
+		}
+	</script>
+	
+    <script src="js/jquery.js"></script>
+    <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+    <script src="js/bootstrap.min.js"></script>
+	
+  </body>
+</html>
