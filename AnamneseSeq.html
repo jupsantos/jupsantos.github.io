@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<!-- Meta tags Obrigatórias -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+
+	<title>Anamnese</title>
+</head>
+<body>
+
+	<nav id="colorir" class="navbar navbar-expand-md navbar-light fixed-top">
+		<a class="navbar-brand">ARCO - Anamnese</a>
+		
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+		<ul class="navbar-nav mr-auto">
+		  <li class="nav-item active">
+			<a class="nav-link" href="">Início <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="Consulta.html">Consulta</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="Exame.html">Exames</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="Medicacao.html">Medicação</a>
+		  </li>
+		  <li class="nav-item">
+			<output id="lblData" class="form-control"></output>
+		  </li>
+		</ul>
+	</nav>
+	<br/><br/><br/>
+
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-header">Exames Anteriores</h5>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label>Exame</label>
+					<select id="exame" class="form-control">
+						<option>Selecione</option>
+						<option>TCC</option>
+						<option>RM</option>
+						<option>EEG</option>
+					</select>
+				</div>
+				<div class="form-group col-md-4">
+					<label>Resultado</label>
+					</br>
+					<input type="radio" name="grupo" value="Não" onclick="hide(alterado)"> Normal</input>
+						<input type="radio" name="grupo" value="Sim" onclick="show(alterado)"> Alterado
+							<ul id="alterado" class="list-unstyled invisivel"> 
+								<li><input name="cboContusao" type="checkbox"> Contusão</li>
+								<li><input name="cboHemorragia" type="checkbox"> Hemorragia Sub-aracnóidea </li>
+								<li><input name="cboFratura" type="checkbox"> Fratura de crânio </li>
+								<li><input name="cboAfundamento" type="checkbox"> Afundamento</li>
+								<li><input name="cboOutros" type="checkbox"> Outros</li>
+							</ul>
+				</div>
+				<div class="col-md-4">
+					<a href="">
+					<button class="btn btn-outline-primary">Adicionar</button></a>
+				</div>
+			</div>
+			
+			
+		</div>
+		<div class="card-body">
+			<h5 class="card-header">Medicação prévia</h5>
+				</br>
+				<div class="form-row">
+					<div class="col-md-4">
+						<ul class="list-unstyled">
+							<li><input type="checkbox"> Anti-hipertensivos</li>
+							<li><input type="checkbox"> Hipolipemiantes</li>
+							<li><input type="checkbox"> Antidepressivos</li>
+							<li><input type="checkbox"> Benzodiazepínicos</li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<ul class="list-unstyled">
+							<li><input type="checkbox"> Anti-convulsivantes / estabilizadores do humor</li>
+							<li><input type="checkbox"> Aspirina</li>
+							<li><input type="checkbox"> Anti-coagulantes</li>
+							<li><input type="checkbox"> Outro</li>
+							<input type="text" class="form-control">
+						</ul>
+					</div>
+				</div>
+		</div>
+
+		<div class="form-group">
+			<a href="Consulta.html">
+			<button id="seguir" class="btn btn-primary btn-lg">Prosseguir</button></a>
+		</div>
+	</div>
+
+
+	<script>
+		function show(element){
+			element.className = "visivel";
+		}
+	</script>
+	
+	<script>
+		function hide(element){
+			element.className = "invisivel";
+		}
+	</script>
+
+
+	<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+    <script src="js/jquery.js"></script>
+    <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
