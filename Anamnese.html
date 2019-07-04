@@ -10,15 +10,10 @@
 	<link href="css/style.css" rel="stylesheet">
 	
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
 	<link type="text/javascript" href="js/main.js">
 
 	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
-	<script type="text/javascript">
-		jQuery(window).load(function($){
-			atualizaData();
-		});
-	</script>
+	<script src="js/main.js"></script>
 
     <title>Anamnese</title>
   </head>
@@ -28,21 +23,21 @@
 		
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 		<ul class="navbar-nav mr-auto">
-		  <li class="nav-item active">
-			<a class="nav-link" href="">Início <span class="sr-only">(current)</span></a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="Consulta.html">Consulta</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="Exame.html">Exames</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="Medicacao.html">Medicação</a>
-		  </li>
-		  <li class="nav-item">
-			<output id="lblData" class="form-control"></output>
-		  </li>
+			<li class="nav-item active">
+				<a class="nav-link" href="">Início <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="Consulta.html">Consulta</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="Exame.html">Exames</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="Medicacao.html">Medicação</a>
+			</li>
+			<li class="nav-item topoDireito">
+				<output id="lblData" class="form-control"></output>
+	  		</li>
 		</ul>
 	</nav>
 	<br/><br/><br/>
@@ -85,20 +80,80 @@
 				<div class="form-group col-md-6">
 					<label>Causa do acidente:</label>
 					<ul class="list-unstyled">
-						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Conflito interpessoal (domicílio)</li>
-						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Conflito interpessoal (via pública)</li>
-						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Acidente de trânsito (atropelamento - pedestre)</li>
-						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Acidente de trânsito (motorista ou passageiro - dentro do veículo)</li>
-						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Acidente de trânsito (atropelamento - moto)</li>
-						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Acidente de trânsito (bicicleta)</li>
-						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Acidente doméstico (queda de objeto sobre a pessoa)</li>
-						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Acidente doméstico (queda de algum lugar ou própria altura)</li>
-						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Acidente de trabalho (queda de objeto sobre a pessoa ou queda de algum lugar)</li>
-						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Não há informação</li>
-						<li><input type="radio" name="grupo2" value="" onclick="hide(inescondido)"> Não se aplica</li>
-						<li><input type="radio" name="grupo2" value="" onclick="show(inescondido)"> Outro (outra situação de acidente de trânsito)</li>
+						<li>
+							<div class="custom-control custom-radio">
+								<input type="radio" name="customRadio" id="rbnConflito" onclick="hide(inescondido)" class="custom-control-input">
+								<label for="rbnConflito" class="custom-control-label">Conflito interpessoal (domicílio)</label>
+							</div>
+						</li>	
+						<li>
+							<div class="custom-control custom-radio">	
+								<input type="radio" name="customRadio" id="rbnInterpessoal" onclick="hide(inescondido)" class="custom-control-input"> 
+								<label for="rbnInterpessoal" class="custom-control-label">Conflito interpessoal (via pública)</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-radio"> 	
+								<input type="radio" name="customRadio" id="rbnTransito" onclick="hide(inescondido)" class="custom-control-input"> 
+								<label for="rbnTransito" class="custom-control-label">Acidente de trânsito (atropelamento - pedestre)</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-radio">
+								<input type="radio" name="customRadio" id="rbnVeiculo" onclick="hide(inescondido)" class="custom-control-input">
+								<label for="rbnVeiculo" class="custom-control-label">Acidente de trânsito (motorista ou passageiro - dentro do veículo)</label>	
+							</div>	
+						</li>		
+						<li>
+							<div class="custom-control custom-radio">
+								<input type="radio" name="customRadio" id="rbnMotoAtropelamento" onclick="hide(inescondido)" class="custom-control-input"> 
+								<label for="rbnMotoAtropelamento" class="custom-control-label">Acidente de trânsito (atropelamento - moto)</label>
+							</div>	
+						</li>		
+						<li>
+							<div class="custom-control custom-radio">	
+								<input type="radio" name="customRadio" id="rbnBicicleta" onclick="hide(inescondido)" class="custom-control-input"> 
+								<label for="rbnBicicleta" class="custom-control-label">Acidente de trânsito (bicicleta)</label>
+							</div>	
+						</li>
+						<li>
+							<div class="custom-control custom-radio">
+								<input type="radio" name="customRadio" id="rbnDomestico" onclick="hide(inescondido)" class="custom-control-input"> 
+								<label for="rbnDomestico" class="custom-control-label">Acidente doméstico (queda de objeto sobre a pessoa)</label>
+							</div>	
+						</li>
+						<li>
+							<div class="custom-control custom-radio">
+								<input type="radio" name="customRadio" id="rbnQueda" onclick="hide(inescondido)" class="custom-control-input"> 
+								<label for="rbnQueda" class="custom-control-label">Acidente doméstico (queda de algum lugar ou própria altura)</label>
+							</div>	
+						</li>
+						<li>
+							<div class="custom-control custom-radio">
+								<input type="radio" name="customRadio" id="rbnTrabalho" onclick="hide(inescondido)" class="custom-control-input"> 
+								<label for="rbnTrabalho" class="custom-control-label">Acidente de trabalho (queda de objeto sobre a pessoa ou queda de algum lugar)</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-radio">
+								<input type="radio" name="customRadio" id="rbnSemInformacao" onclick="hide(inescondido)" class="custom-control-input"> 
+								<label for="rbnSemInformacao" class="custom-control-label">Não há informação</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-radio">
+								<input type="radio" name="customRadio" id="rbnNaoAplica" onclick="hide(inescondido)" class="custom-control-input"> 
+								<label for="rbnNaoAplica" class="custom-control-label">Não se aplica</label>
+							</div>	
+						</li>
+						<li>
+							<div class="custom-control custom-radio">	
+								<input type="radio" name="customRadio" id="rbnOutro" onclick="show(inescondido)" class="custom-control-input"> 
+								<label for="rbnOutro" class="custom-control-label">Outro (outra situação de acidente de trânsito)</label>
+							</div>	
+						</li>
 						<div id="inescondido" class="invisivel">
-							<input type="text" class="form-control">
+							<input type="text" class="form-control input-outros">
 						</div>
 					</ul>
 				</div>
@@ -106,16 +161,51 @@
 					<div>
 						<label>Associação do TCE com uso de álcool:</label>
 						<ul class="list-unstyled">
-							<li><input type="radio" name="grupo3" value=""> Sim - TCE foi ou pode ter sido consequência da ingestão de álcool</li>
-							<li><input type="radio" name="grupo3" value=""> Não - não se sabe se pode ter havido correlação</li>
-							<li><input type="radio" name="grupo3" value=""> Não há informação</li>
-							<li><input type="radio" name="grupo3" value=""> Não tem certeza</li>
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="rbnCustom" id="rbnSim" class="custom-control-input"> 
+									<label for="rbnSim" class="custom-control-label">Sim - TCE foi ou pode ter sido consequência da ingestão de álcool</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="rbnCustom" id="rbnNaoSabe" class="custom-control-input"> 
+									<label for="rbnNaoSabe" class="custom-control-label">Não - não se sabe se pode ter havido correlação</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="rbnCustom" id="rbnHaInformacao" class="custom-control-input"> 
+									<label for="rbnHaInformacao" class="custom-control-label">Não há informação</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-radio">	
+									<input type="radio" name="rbnCustom" id="rbnNaoTemCerteza" class="custom-control-input"> 
+									<label for="rbnNaoTemCerteza" class="custom-control-label">Não tem certeza</label>
+								</div>
+							</li>
 						</ul>
 						<label>Tipo de acidente:</label>
 						<ul class="list-unstyled">
-							<li><input type="radio" name="grupo1" value=""> Civil</li>
-							<li><input type="radio" name="grupo1" value=""> Esportivo</li>
-							<li><input type="radio" name="grupo1" value=""> Militar</li>
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="radioCustom" id="rbnCivil" class="custom-control-input"> 
+									<label for="rbnCivil" class="custom-control-label">Civil</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="radioCustom" id="rbnEsportivo" class="custom-control-input"> 
+									<label for="rbnEsportivo" class="custom-control-label">Esportivo</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="radioCustom" id="rbnMilitar" class="custom-control-input"> 
+									<label for="rbnMilitar" class="custom-control-label">Militar</label>
+								</div>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -127,17 +217,37 @@
 				<label>Perda de consciência:</label>
 				<form>
 				<ul class="list-unstyled">
-					<li><input type="radio" id="nao7" name="grupo7" value="anteriores-nao" onclick="hide(divescondido), hide(divescondido1), hide(divescondido2)"> Não</li>
-					<li><input type="radio" id="sim7" name="grupo7" value="anteriores-sim" onclick="show(divescondido)"> Sim</li>
+					<li>
+						<div class="custom-control custom-radio">
+							<input type="radio" id="rbnNo" name="custRadio" value="anteriores-nao" onclick="hide(divescondido), hide(divescondido1), hide(divescondido2)" class="custom-control-input"> 
+							<label for="rbnNo" class="custom-control-label">Não</label>
+						</div>
+					</li>
+					<li>
+						<div class="custom-control custom-radio">
+							<input type="radio" id="rbnYes" name="custRadio" value="anteriores-sim" onclick="show(divescondido)" class="custom-control-input"> 
+							<label for="rbnYes" class="custom-control-label">Sim</label>
+						</div>
+					</li>
 					<div id="divescondido" class="invisivel">
 						<ul class="list-unstyled">
-							<li><input type="radio" name="grupo8" onclick="show(divescondido1), hide(divescondido2)">Tempo em horas</li>
-								<div id="divescondido1" class="invisivel">
-									<input type="number" name="qtdHoras" class="form-control">
+							<li>
+								<div class="custom-control custom-radio">	
+									<input type="radio" name="cusRadio" id="rbnHoras" onclick="show(divescondido1), hide(divescondido2)" class="custom-control-input">
+									<label for="rbnHoras" class="custom-control-label">Tempo em horas</label>
 								</div>
-							<li><input type="radio" name="grupo8" onclick="show(divescondido2), hide(divescondido1)">Outro</li>
+							</li>
+								<div id="divescondido1" class="invisivel">
+									<input type="number" name="qtdHoras" class="form-control input-outros">
+								</div>
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="cusRadio" id="rbnOutros" onclick="show(divescondido2), hide(divescondido1)" class="custom-control-input">
+									<label for="rbnOutros" class="custom-control-label">Outro</label>
+								</div>
+							</li>
 								<div id="divescondido2" class="invisivel">
-									<input type="text" name="" class="form-control">
+									<input type="text" name="" class="form-control input-outros">
 								</div>
 						</ul>
 					</div>
@@ -148,26 +258,36 @@
 				<label>Amnésia pós-traumática:</label>
 				<form>
 				<ul class="list-unstyled">
-					<li><input type="radio" id="nao7" name="grupo7" value="amnesia-nao" onclick="hide(divescondido3)"> Não</li>
-					<li><input type="radio" id="sim7" name="grupo7" value="amnesia-sim" onclick="show(divescondido3)"> Sim</li>
-						<div id="divescondido3" class="form-row invisivel">
-							<div class="form-group col-md-5">
+					<li>
+						<div class="custom-control custom-radio">	
+							<input type="radio" id="rbnNah" name="rbnCust" value="amnesia-nao" onclick="hide(divescondido3)" class="custom-control-input"> 
+							<label for="rbnNah" class="custom-control-label">Não</label>
+						</div>	
+					</li>
+					<li>
+						<div class="custom-control custom-radio">
+							<input type="radio" id="rbnYeah" name="rbnCust" value="amnesia-sim" onclick="show(divescondido3)" class="custom-control-input"> 
+							<label for="rbnYeah" class="custom-control-label">Sim</label>
+						</div>
+					</li>
+					<div id="divescondido3" class="form-row invisivel">
+						<div class="form-group col-md-5">
+							<label>Tipo:</label>
+							<select id="tipo" class="form-control">
+								<option>Selecione</option>
+								<option>Minutos</option>
+								<option>Horas</option>
+								<option>Dias</option>
+								<option>Semanas</option>
+								<option>Meses</option>
+								<option>Anos</option>
+							</select>
+						</div>
+						<div class="form-group col-md-5">
 								<label>Quanto tempo:</label>
 								<input type="number" name="" class="form-control" min="0">
-							</div>
-							<div class="form-group col-md-5">
-								<label>Tipo:</label>
-								<select id="tipo" class="form-control">
-									<option>Selecione</option>
-									<option>Minutos</option>
-									<option>Horas</option>
-									<option>Dias</option>
-									<option>Semanas</option>
-									<option>Meses</option>
-									<option>Anos</option>
-								</select>
-							</div>
 						</div>
+					</div>
 				</ul>
 				</form>
 			</div>
@@ -176,9 +296,24 @@
 				<label>Submissão a procedimento neurocirúrgico:</label>
 				<form>
 				<ul class="list-unstyled">
-					<li><input type="radio" id="nao7" name="grupo9" value="cirurgico-nao" onclick="hide(divescondido4)"> Não</li>
-					<li><input type="radio" id="nao7" name="grupo9" value="cirurgico-nao-lembra" onclick="hide(divescondido4)"> Não se lembra</li>
-					<li><input type="radio" id="sim7" name="grupo9" value="cirurgico-sim" onclick="show(divescondido4)"> Sim</li>
+					<li>
+						<div class="custom-control custom-radio">
+							<input type="radio" id="rbnNao" name="rdbCustom" value="cirurgico-nao" onclick="hide(divescondido4)" class="custom-control-input"> 
+							<label for="rbnNao" class="custom-control-label">Não</label>
+						</div>
+					</li>
+					<li>
+						<div class="custom-control custom-radio">
+							<input type="radio" id="rbnNaoLembra" name="rdbCustom" value="cirurgico-nao-lembra" onclick="hide(divescondido4)" class="custom-control-input"> 
+							<label for="rbnNaoLembra" class="custom-control-label">Não se lembra</label>
+						</div>
+					</li>
+					<li>
+						<div class="custom-control custom-radio">
+							<input type="radio" id="rbnsim" name="rdbCustom" value="cirurgico-sim" onclick="show(divescondido4)" class="custom-control-input"> 
+							<label for="rbnsim" class="custom-control-label">Sim</label>
+						</div>
+					</li>
 					<div id="divescondido4" class="invisivel">
 						<label>Qual?</label>
 						<select id="tipo" class="form-control">
@@ -252,22 +387,9 @@
 		</div>
 
 	</div>
-			
-	<script>
-		function show(element){
-			element.className = "visivel";
-		}
-	</script>
-	
-	<script>
-		function hide(element){
-			element.className = "invisivel";
-		}
-	</script>
 	
     <script src="js/jquery.js"></script>
     <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
     <script src="js/bootstrap.min.js"></script>
-	
-  </body>
+    </body>
 </html>

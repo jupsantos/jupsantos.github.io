@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <!-- Meta tags Obrigatórias -->
@@ -11,26 +11,48 @@
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 	
+	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+	<script src="js/main.js"></script>
+
     <title>Queixas</title>
 	</head>
 	<body>
 	
-	<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #e3f2fd;">
-		<a class="navbar-brand">ARCO - Paciente</a>
+  	<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #e3f2fd;">
+		<a class="navbar-brand">ARCO - Consulta</a>
 		
 		<div class="collapse navbar-collapse" id="navbarCollapse">
-		<ul class="navbar-nav mr-auto">
-		  <li class="nav-item active">
-			<a class="nav-link" href="InicioPaciente.html">Início <span class="sr-only">(current)</span></a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="Paciente.html">Informações Pessoais</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="Acompanhante.html">Acompanhante</a>
-		  </li>
-		</ul>
-		</div>
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="">Início <span class="sr-only">(current)</span></a>
+			 	</li>
+                <li class="nav-item">
+					<a class="nav-link" href="AntecedentesPessoais.html">Antecedentes Pessoais</a>
+			  	</li>
+			  	<li class="nav-item">
+					<a class="nav-link" href="Anamnese.html">Anamnese</a>
+			  	</li>
+			  	<li class="nav-item">
+					<a class="nav-link" href="Medicacao.html">Medicação</a>
+			  	</li>
+			  	<li class="nav-item">
+					<a class="nav-link" href="#">Testes</a>
+			 	</li>
+			  	<li class="nav-item">
+					<a class="nav-link" href="#">Escalas</a>
+			  	</li>
+			  	<li class="nav-item dropdown">
+			    	<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Exames</a>
+			    	<div class="dropdown-menu">
+			      	<a class="dropdown-item" href="Exame.html">Resultados de Exames</a>
+			      	<a class="dropdown-item" href="SolicitacaoExame.html">Solicitação de Exames</a>
+			    	</div>
+			  	</li>
+			  	<li class="nav-item topoDireito">
+					<output id="lblData" class="form-control"></output>
+		  		</li>
+	    	</ul>
+    	</div>	
 	</nav>
 	
 	<br/><br/><br/>
@@ -43,20 +65,87 @@
 						<div id="comportamental" class="card-body">
 							<legend>Comportamentais</legend>
 							<ul class="list-unstyled">
-								<li><input type="checkbox"> Irritabilidade/agressividade</li>
-								<li><input type="checkbox"> Sintomas/sinais de ansiedade</li>
-								<li><input type="checkbox"> Sintomas/sinais obsessivos/compulsivos</li>
-								<li><input type="checkbox"> Sintomas/sinais depressivos</li>
-								<li><input type="checkbox"> Hipersonolência diurna / insônia / outros distúrbios do sono</li>
-								<li><input type="checkbox"> Labilidade emocional</li>
-								<li><input type="checkbox"> Hipersexualidade / outros sintomas de desinibição</li>
-								<li><input type="checkbox"> Agitação motora / inquietação</li>
-								<li><input type="checkbox"> Apatia</li>
-								<li><input type="checkbox"> Sintomas bipolares</li>
-								<li><input type="checkbox"> Sintomas psicóticos (alucinações/deliríos)</li>
-								<li><input type="checkbox"> Nenhuma queixa</li>
-								<li><input type="checkbox"> Outro</li>
-								<input type="text" class="form-control">
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="customCbo" id="cboIrritabilidade" class="custom-control-input"> 
+										<label for="cboIrritabilidade" class="custom-control-label">Irritabilidade/agressividade</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="customCbo" id="cboAnsiedade" class="custom-control-input"> 
+										<label for="cboAnsiedade" class="custom-control-label">Sintomas/sinais de ansiedade</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="customCbo" id="cboObsessao" class="custom-control-input"> 
+										<label for="cboObsessao" class="custom-control-label">Sintomas/sinais obsessivos/compulsivos</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="customCbo" id="cboDepressao" class="custom-control-input"> 
+										<label for="cboDepressao" class="custom-control-label">Sintomas/sinais depressivos</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="customCbo" id="cboInsonia" class="custom-control-input"> 
+										<label for="cboInsonia" class="custom-control-label">Hipersonolência diurna / insônia / outros distúrbios do sono</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="customCbo" id="cboLabilidade" class="custom-control-input"> 
+										<label for="cboLabilidade" class="custom-control-label">Labilidade emocional</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="customCbo" id="cboDesinibicao" class="custom-control-input"> 
+										<label for="cboDesinibicao" class="custom-control-label">Hipersexualidade / outros sintomas de desinibição</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="customCbo" id="cboInquietacao" class="custom-control-input"> 
+										<label for="cboInquietacao" class="custom-control-label">Agitação motora / inquietação</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="customCbo" id="cboApatia" class="custom-control-input"> 
+										<label for="cboApatia" class="custom-control-label">Apatia</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="customCbo" id="cboBipolar" class="custom-control-input"> 
+										<label for="cboBipolar" class="custom-control-label">Sintomas bipolares</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="customCbo" id="cboPsicotico" class="custom-control-input"> 
+										<label for="cboPsicotico" class="custom-control-label">Sintomas psicóticos (alucinações/deliríos)</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="customCbo" id="cboNenhuma" class="custom-control-input"> 
+										<label for="cboNenhuma" class="custom-control-label">Nenhuma queixa</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="customCbo" id="cboOutro" class="custom-control-input" onclick="show(esconder)"> 
+										<label for="cboOutro" class="custom-control-label">Outro</label>
+									</div>
+								</li>
+								<div class="invisivel" id="esconder">
+									<input type="text" class="form-control input-outros">
+								</div>
 							</ul>
 						</div>
 						
@@ -64,33 +153,132 @@
 						<div id="convencional" class="card-body">
 							<legend>Neurológicas Convencionais</legend>
 							<ul class="list-unstyled">
-								<li><input type="checkbox"> Dor de cabeça</li>
-								<li><input type="checkbox"> Problemas de equilíbrio / tontura</li>
-								<li><input type="checkbox"> Sintomas motores focais</li>
-								<li><input type="checkbox"> Sintomas de motilidade diplopia/ocular</li>
-								<li><input type="checkbox"> Hiposmia</li>
-								<li><input type="checkbox"> Sintomas de sensibilidade focal</li>
-								<li><input type="checkbox"> Outros sintomas visuais</li>
-								<li><input type="checkbox"> Dificuldade de locomoção</li>
-								<li><input type="checkbox"> Disfagia</li>
-								<li><input type="checkbox"> Disartria</li>
-								<li><input type="checkbox"> Convulsões</li>
-								<li><input type="checkbox"> Nenhuma queixa</li>
-								<li><input type="checkbox"> Outro</li>
-								<input type="text" class="form-control">			
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCustom" id="cboDor" class="custom-control-input"> 
+										<label for="cboDor" class="custom-control-label">Dor de cabeça</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCustom" id="cboEquilibrio" class="custom-control-input"> 
+										<label for="cboEquilibrio" class="custom-control-label">Problemas de equilíbrio / tontura</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCustom" id="cboMotores" class="custom-control-input"> 
+										<label for="cboMotores" class="custom-control-label"> Sintomas motores focais</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCustom" id="cboMotilidade" class="custom-control-input"> 
+										<label for="cboMotilidade" class="custom-control-label">Sintomas de motilidade diplopia/ocular</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCustom" id="cboHiposmia" class="custom-control-input"> 
+										<label for="cboHiposmia" class="custom-control-label">Hiposmia</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCustom" id="cboSensibilidade" class="custom-control-input"> 
+										<label for="cboSensibilidade" class="custom-control-label">Sintomas de sensibilidade focal</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCustom" id="cboVisuais" class="custom-control-input"> 
+										<label for="cboVisuais" class="custom-control-label">Outros sintomas visuais</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCustom" id="cboLocomocao" class="custom-control-input"> 
+										<label for="cboLocomocao" class="custom-control-label">Dificuldade de locomoção</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCustom" id="cboDisfagia" class="custom-control-input"> 
+										<label for="cboDisfagia" class="custom-control-label">Disfagia</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCustom" id="cboDisartria" class="custom-control-input"> 
+										<label for="cboDisartria" class="custom-control-label">Disartria</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCustom" id="cboConvulsões" class="custom-control-input"> 
+										<label for="cboConvulsões" class="custom-control-label">Convulsões</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCustom" id="cboSemQueixas" class="custom-control-input"> 
+										<label for="cboSemQueixas" class="custom-control-label"> Nenhuma queixa</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCustom" id="cboOutros" class="custom-control-input" onclick="show(esconde)"> 
+										<label for="cboOutros" class="custom-control-label"> Outro</label>
+									</div>
+								</li>
+								<div class="invisivel" id="esconde">
+									<input type="text" class="form-control input-outros">			
+								</div>
 							</ul>
 						</div>
 						
 						<div id="cognitiva" class="card-body">
 							<legend>Cognitivas</legend >
 							<ul class="list-unstyled">
-								<li><input type="checkbox"> Dificuldade de atenção/concentração</li>
-								<li><input type="checkbox"> Dificuldade de memória</li>
-								<li><input type="checkbox"> Dificuldade de linguagem/afasia</li>
-								<li><input type="checkbox"> Desorientação espacial</li>
-								<li><input type="checkbox"> Nenhuma queixa</li>
-								<li><input type="checkbox"> Outro</li>
-								<input type="text" class="form-control">
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCognitivas" id="cboConcentracao" class="custom-control-input" onclick="show(esconde)"> 
+										<label for="cboConcentracao" class="custom-control-label"> Dificuldade de atenção/concentração</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCognitivas" id="cboMemoria" class="custom-control-input" onclick="show(esconde)"> 
+										<label for="cboMemoria" class="custom-control-label"> Dificuldade de memória</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCognitivas" id="cboAfasia" class="custom-control-input" onclick="show(esconde)"> 
+										<label for="cboAfasia" class="custom-control-label"> Dificuldade de linguagem/afasia</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCognitivas" id="cboDesorientacao" class="custom-control-input" onclick="show(esconde)"> 
+										<label for="cboDesorientacao" class="custom-control-label"> Desorientação espacial</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCognitivas" id="cboNenhumaQueixa" class="custom-control-input" onclick="show(esconde)"> 
+										<label for="cboNenhumaQueixa" class="custom-control-label"> Nenhuma queixa</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" name="cboCognitivas" id="cboOther" class="custom-control-input" onclick="show(escondido)"> 
+										<label for="cboOther" class="custom-control-label"> Outro</label>
+									</div>
+								</li>
+								<div class="invisivel" id="escondido">
+									<input type="text" class="form-control">
+								</div>	
 							</ul>	
 						</div>
 				</div>
@@ -99,7 +287,7 @@
 
 	<br/>
 	<div class="form" style="width: 96%;">
-		<a href="FinalPaciente.html">
+		<a href="AntecedentesPessoais.html">
 		<button id="seguir" class="btn btn-primary btn-lg">Concluir</button>
 	</div>
 	

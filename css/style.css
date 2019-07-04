@@ -20,7 +20,8 @@ div.center-form > form {
 }
 
 #seguir {
-	float:right;
+	float: right;
+	margin-right: 50px;
 }
 
 #end {
@@ -39,7 +40,7 @@ div.center-form > form {
 	visibility:visible;
 }
 .invisivel {
-	visibility:hidden;
+	display: none;
 }
 
 div.direita {
@@ -70,7 +71,7 @@ div.esquerda {
 	width: 120vw;
 	height: 500px;
 	margin-left: 25%;
-	margin-right: 25%
+	margin-right: 25%;
 	margin-top: 50px;
 }
 
@@ -92,8 +93,8 @@ tr.mudarCor {
 .topoDireito {
 	position: absolute;
 	bottom: 0;
-	right: 0;
-	width: 190px;
+	right: 25px;
+	width: 198px;
 	top: 10px;
 }
 
@@ -112,6 +113,10 @@ tr.mudarCor {
 	margin-bottom: 5px;
 }
 
+.margemSuperior{
+	margin-top: 1.5%;
+}
+
 *::after {
   box-sizing: border-box; 
 }
@@ -128,4 +133,34 @@ tr.mudarCor {
     border-bottom: 0;
     border-left: 0.3em solid transparent;
 
+}
+
+.btn-topo {
+	border: 0;
+	background-color: transparent;
+	float: right;
+	margin-right: 1%;
+}
+
+
+.margemInferior{
+	margin-bottom: 10px;
+}
+
+.my-nav {
+	background-color: #e3f2fd;
+}
+
+.btn-info {
+	width: 200px; 
+	height: 100px
+	
+}
+
+#lblData {
+	width: 220px;
+}
+
+.input-outros {
+	width: 80%;
 }

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	 <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+	<script src="js/main.js"></script>
+	<title>Antecedentes Pessoais</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #e3f2fd;">
+		<a class="navbar-brand">ARCO - Antecedentes Pessoais</a>
+		
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="">Início <span class="sr-only">(current)</span></a>
+			 	</li>
+			  	<li class="nav-item">
+					<a class="nav-link" href="QueixasAtuais.html">Queixas Atuais</a>
+			  	</li>
+              <li class="nav-item">
+					<a class="nav-link" href="Anamnese.html">Anamnese</a>
+			  	</li>
+			  	<li class="nav-item">
+					<a class="nav-link" href="Medicacao.html">Medicação</a>
+			  	</li>
+			  	<li class="nav-item">
+					<a class="nav-link" href="#">Testes</a>
+			 	</li>
+			  	<li class="nav-item">
+					<a class="nav-link" href="#">Escalas</a>
+			  	</li>
+			  	<li class="nav-item dropdown">
+			    	<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Exames</a>
+			    	<div class="dropdown-menu">
+			      	<a class="dropdown-item" href="Exame.html">Resultados de Exames</a>
+			      	<a class="dropdown-item" href="SolicitacaoExame.html">Solicitação de Exames</a>
+			    	</div>
+			  	</li>
+			  	<li class="nav-item topoDireito">
+					<output id="lblData" class="form-control"></output>
+		  		</li>
+	    	</ul>
+    	</div>	
+	</nav>
+	<br/><br/><br/>
+
+	<div class="card">
+		<div class="card-body">	
+			<h5 class="card-header">Antecedentes Pessoais</h5>
+			<br/>
+			<div class="form-row">
+			
+				<div class="form-group col-md-4">
+					<h5 class="card-title">Gerais</h5>
+					<ul class="list-unstyled">
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboGerais" id="cboAvc" class="custom-control-input"> 
+								<label for="cboAvc" class="custom-control-label">AVC</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboGerais" id="cboMeningite" class="custom-control-input"> 
+								<label for="cboMeningite" class="custom-control-label">Meningite</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboGerais" id="cboCefaleia" class="custom-control-input"> 
+								<label for="cboCefaleia" class="custom-control-label">Cefaléia</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboGerais" id="cboEpilepsia" class="custom-control-input"> 
+								<label for="cboEpilepsia" class="custom-control-label">Epilepsia</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboGerais" id="cboCoronariana" class="custom-control-input"> 
+								<label for="cboCoronariana" class="custom-control-label">Doença coronariana</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboGerais" id="cboRenal" class="custom-control-input"> 
+								<label for="cboRenal" class="custom-control-label">Problema renal</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboGerais" id="cboHepático" class="custom-control-input"> 
+								<label for="cboHepático" class="custom-control-label">Problema hepático</label>
+							</div>
+						</li>	
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboGerais" id="cboDislipidemia" class="custom-control-input"> 
+								<label for="cboDislipidemia" class="custom-control-label">Dislipidemia</label>
+							</div>
+						</li>	
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboGerais" id="cboTireóidismo" class="custom-control-input"> 
+								<label for="cboTireóidismo" class="custom-control-label">Hipo ou hiper tireóidismo</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboGerais" id="cboPulmonar" class="custom-control-input"> 
+								<label for="cboPulmonar" class="custom-control-label">Distúbio pulmonar</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboGerais" id="cboTabagismo" class="custom-control-input"> 
+								<label for="cboTabagismo" class="custom-control-label">Tabagismo</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboGerais" id="cboEtilismo" class="custom-control-input"> 
+								<label for="cboEtilismo" class="custom-control-label">Etilismo</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboGerais" id="cboOutro" class="custom-control-input" onclick="show(mostrado)"> 
+								<label for="cboOutro" class="custom-control-label">Outros</label>
+							</div>
+						</li>
+						<div id="mostrado" class="invisivel">
+							<input type="text" class="form-control input-outros	">			
+						</div>
+					</ul>
+				</div>
+		
+				<div class="form-group col-md-4">
+					<h5 class="card-title">Problemas cognitivos pré-morbidos</h5>
+					<ul class="list-unstyled">
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboCognitivo" id="cboAprendizagem" class="custom-control-input"> 
+								<label for="cboAprendizagem" class="custom-control-label">Dificuldade de aprendizagem na infância</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboCognitivo" id="cboDesempenho" class="custom-control-input"> 
+								<label for="cboDesempenho" class="custom-control-label">Mau desempenho escolar</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboCognitivo" id="cboRepeticao" class="custom-control-input"> 
+								<label for="cboRepeticao" class="custom-control-label">Repetição de ano escolar</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboCognitivo" id="cboOther" class="custom-control-input" onclick="show(esconder)"> 
+								<label for="cboOther" class="custom-control-label">Outros</label>
+							</div>
+						</li>
+						<div id="esconder" class="invisivel">
+							<input type="text" class="form-control input-outros	">			
+						</div>
+					</ul>
+				</div>
+			
+				<div class="form-group col-md-4">
+					<h5 class="card-title">Problemas comportamentais pré-morbidos</h5>
+					<ul class="list-unstyled">
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboComportamentais" id="cboDelirios" class="custom-control-input"> 
+								<label for="cboDelirios" class="custom-control-label"> Presença de delírios e/ou alucinações em algum momento da vida</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboComportamentais" id="cboAgressividade" class="custom-control-input"> 
+								<label for="cboAgressividade" class="custom-control-label"> Presença de agressividade/violência em algum momento da vida</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboComportamentais" id="cboConflito" class="custom-control-input"> 
+								<label for="cboConflito" class="custom-control-label"> Envolvimento em conflitos interpessoais</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboComportamentais" id="cboOthers" class="custom-control-input" onclick="show(mostra)"> 
+								<label for="cboOthers" class="custom-control-label"> Outros</label>
+							</div>
+						</li>
+						<div id="mostra" class="invisivel">
+							<input type="text" class="form-control input-outros">			
+						</div>	
+					</ul>
+				</div>
+				
+				<div class="form-group col-md-4">
+					<h5 class="card-title">Problemas de humor pré-morbidos</h5>
+					<ul class="list-unstyled">
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboHumor" id="cboDepressivo" class="custom-control-input"> 
+								<label for="cboDepressivo" class="custom-control-label"> Presença de episódio depressivo/sintomas depressivos</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboHumor" id="cboAnsiedade" class="custom-control-input"> 
+								<label for="cboAnsiedade" class="custom-control-label"> Presença de sintomas ansiosos/ansiedade generalizada</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboHumor" id="cboBipolar" class="custom-control-input"> 
+								<label for="cboBipolar" class="custom-control-label"> Presença de distúrbio bipolar</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-checkbox">
+								<input type="checkbox" name="cboHumor" id="cboOutrosDisturbios" class="custom-control-input"> 
+								<label for="cboOutrosDisturbios" class="custom-control-label"> Presença de sintomas de outros distúrbios ansiosos</label>
+							</div>
+						</li>
+					</ul>
+				</div>	
+		
+				<div class="form-group col-md-4">
+					<h5 class="card-title">Antecedentes familiares</h5>
+					<label for="fatorRisco">Fatores de risco vascular</label>
+					<input type="text" class="form-control" id="fatorRisco" style="width: 80%">
+					<label for="fatorRelevante">Outro fator relevante</label>
+					<input type="text" class="form-control" id="fatorRelevante" style="width: 80%">
+				</div>
+			
+			</div>
+		</div>
+	</div>
+		
+	<div class="card">
+		<h5 class="card-header">Vícios</h5>
+		<br/>
+		<div class="form-row">
+			<div class="form-group col-md-4">
+				<h5 class="card-title">Uso/abuso/dependência de álcool</h5>
+				<ul class="list-unstyled">
+					<li>
+						<div class="custom-control custom-radio">
+							<input type="checkbox" name="cboDependencia" id="cboSim" class="custom-control-input"> 
+							<label for="cboSim" class="custom-control-label"> Sim</label>
+						</div>
+					</li>
+					<li>
+						<div class="custom-control custom-radio">
+							<input type="checkbox" name="cboDependencia" id="cboNao" class="custom-control-input"> 
+							<label for="cboNao" class="custom-control-label"> Não</label>
+						</div>
+					</li>
+					<li>
+						<div class="custom-control custom-radio">
+							<input type="checkbox" name="cboDependencia" id="cboSemInformacao" class="custom-control-input"> 
+							<label for="cboSemInformacao" class="custom-control-label"> Não há informações</label>
+						</div>
+					</li>
+					<li>
+						<div class="custom-control custom-radio">
+							<input type="checkbox" name="cboDependencia" id="cboOutroo" class="custom-control-input" onclick="show(mostrar)"> 
+							<label for="cboOutroo" class="custom-control-label"> Outro</label>
+						</div>
+					</li>
+					<div id="mostrar" class="invisivel">
+						<input type="text" class="form-control input-outros">			
+					</div>
+				</ul>
+			</div>
+			
+			<div class="form-group col-md-4">
+				<h5 class="card-title">Uso de drogas ilícitas</h5>
+				<ul class="list-unstyled">
+				<form>
+					<li>
+						<div class="custom-control custom-radio">
+							<input type="checkbox" name="cboDrogas" id="cboNo" class="custom-control-input" onclick="hide(escondido)"> 
+							<label for="cboNo" class="custom-control-label"> Não</label>
+						</div>
+					</li>
+					<li>
+						<div class="custom-control custom-radio">
+							<input type="checkbox" name="cboDrogas" id="cboYeah" class="custom-control-input" onclick="show(escondido)"> 
+							<label for="cboYeah" class="custom-control-label"> Sim</label>
+						</div>
+					</li>
+						<ul id="escondido" class="invisivel"> 
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="cboDrogaSim" id="cboCocaina" class="custom-control-input"> 
+									<label for="cboCocaina" class="custom-control-label"> Cocaína</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="cboDrogaSim" id="cboCrack" class="custom-control-input"> 
+									<label for="cboCrack" class="custom-control-label"> Crack</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="cboDrogaSim" id="cboHeroina" class="custom-control-input"> 
+									<label for="cboHeroina" class="custom-control-label"> Heroína</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="cboDrogaSim" id="cboEcstasy" class="custom-control-input"> 
+									<label for="cboEcstasy" class="custom-control-label"> Ecstasy e/ou estimulantes</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="cboDrogaSim" id="cboMaconha" class="custom-control-input"> 
+									<label for="cboMaconha" class="custom-control-label"> Maconha</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="cboDrogaSim" id="cboOutroos" class="custom-control-input" onclick="show(inescondido)"> 
+									<label for="cboOutroos" class="custom-control-label"> Outros</label>
+								</div>
+							</li>
+							<div id="inescondido" class="invisivel">
+								<input type="text" class="form-control input-outros">			
+							</div>
+						</ul>
+					</form>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="form" style="width: 96%;">
+		<a href="Anamnese.html">
+	<button class="btn btn-primary btn-lg quadrado">Salvar</button>
+	</div>
+
+  <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+    <script src="js/jquery.js"></script>
+    <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+
+
+
+

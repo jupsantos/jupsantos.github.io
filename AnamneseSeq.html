@@ -10,6 +10,7 @@
 	<link href="css/style.css" rel="stylesheet">
 
 	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+	<script src="js/main.js"></script>
 
 	<title>Anamnese</title>
 </head>
@@ -32,7 +33,7 @@
 		  <li class="nav-item">
 			<a class="nav-link" href="Medicacao.html">Medicação</a>
 		  </li>
-		  <li class="nav-item">
+		  <li class="nav-item topoDireito">
 			<output id="lblData" class="form-control"></output>
 		  </li>
 		</ul>
@@ -55,15 +56,47 @@
 				<div class="form-group col-md-4">
 					<label>Resultado</label>
 					</br>
-					<input type="radio" name="grupo" value="Não" onclick="hide(alterado)"> Normal</input>
-						<input type="radio" name="grupo" value="Sim" onclick="show(alterado)"> Alterado
+					<div class="custom-control custom-radio">
+						<input type="radio" name="customRadio" value="Não" id="rbnNormal" onclick="hide(alterado)" class="custom-control-input"> 
+						<label for="rbnNormal" class="custom-control-label">Normal</label>
+					</div>	
+					<div class="custom-control custom-radio">
+						<input type="radio" name="customRadio" value="Sim" id="rbnAlterado" onclick="show(alterado)" class="custom-control-input"> 
+						<label for="rbnAlterado" class="custom-control-label">Alterado</label>
+					</div>	
 							<ul id="alterado" class="list-unstyled invisivel"> 
-								<li><input name="cboContusao" type="checkbox"> Contusão</li>
-								<li><input name="cboHemorragia" type="checkbox"> Hemorragia Sub-aracnóidea </li>
-								<li><input name="cboFratura" type="checkbox"> Fratura de crânio </li>
-								<li><input name="cboAfundamento" type="checkbox"> Afundamento</li>
-								<li><input name="cboOutros" type="checkbox"> Outros</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input name="customCbo" id="cboContusao" type="checkbox" class="custom-control-input"> 
+										<label for="cboContusao" class="custom-control-label">Contusão</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">	
+										<input name="customCbo" id="cboHemorragia" type="checkbox" class="custom-control-input"> 
+										<label for="cboHemorragia" class="custom-control-label">Hemorragia Sub-aracnóidea </label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">	
+										<input name="customCbo" type="checkbox" id="cboFratura" class="custom-control-input"> 
+										<label for="cboFratura" class="custom-control-label">Fratura de crânio </label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input name="customCbo" id="cboAfundamento" type="checkbox" class="custom-control-input"> 
+										<label for="cboAfundamento" class="custom-control-label">Afundamento</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-checkbox">
+										<input name="customCbo" id="cboOutros" type="checkbox" class="custom-control-input"> 
+										<label for="cboOutros" class="custom-control-label">Outros</label>
+									</div>
+								</li>
 							</ul>
+							
 				</div>
 				<div class="col-md-4">
 					<a href="">
@@ -79,19 +112,61 @@
 				<div class="form-row">
 					<div class="col-md-4">
 						<ul class="list-unstyled">
-							<li><input type="checkbox"> Anti-hipertensivos</li>
-							<li><input type="checkbox"> Hipolipemiantes</li>
-							<li><input type="checkbox"> Antidepressivos</li>
-							<li><input type="checkbox"> Benzodiazepínicos</li>
+							<li>
+								<div class="custom-control custom-checkbox"> 
+									<input type="checkbox" name="cboCustom" id="cboAnti-hipertensivos" class="custom-control-input"> 
+									<label for="cboAnti-hipertensivos" class="custom-control-label">Anti-hipertensivos</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="cboCustom" id="cboHipolipemiantes" class="custom-control-input"> 
+									<label for="cboHipolipemiantes" class="custom-control-label">Hipolipemiantes</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">	
+									<input type="checkbox" name="cboCustom" id="cboAntidepressivos" class="custom-control-input"> 
+									<label for="cboAntidepressivos" class="custom-control-label">Antidepressivos</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="cboCustom" id="cboBenzodiazepínicos" class="custom-control-input"> 
+									<label for="cboBenzodiazepínicos" class="custom-control-label">Benzodiazepínicos</label>
+								</div>
+							</li>
 						</ul>
 					</div>
 					<div class="col-md-4">
 						<ul class="list-unstyled">
-							<li><input type="checkbox"> Anti-convulsivantes / estabilizadores do humor</li>
-							<li><input type="checkbox"> Aspirina</li>
-							<li><input type="checkbox"> Anti-coagulantes</li>
-							<li><input type="checkbox"> Outro</li>
-							<input type="text" class="form-control">
+							<li>
+								<div class="custom-control custom-checkbox">	
+									<input type="checkbox" name="custCbo" id="cboHumor" class="custom-control-input"> 
+									<label for="cboHumor" class="custom-control-label">Anti-convulsivantes / estabilizadores do humor</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="custCbo" id="cboAspirina" class="custom-control-input"> 
+									<label for="cboAspirina" class="custom-control-label">Aspirina</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="custCbo" id="cboCoagulantes" class="custom-control-input"> 
+									<label for="cboCoagulantes" class="custom-control-label">Anti-coagulantes</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="custCbo" id="cboOutro" class="custom-control-input" onclick="show(escondido)"> 
+									<label for="cboOutro" class="custom-control-label">Outro</label>
+								</div>
+							</li>
+							<div class="invisivel" id="escondido">
+								<input type="text" class="form-control input-outros">
+							</div>	
 						</ul>
 					</div>
 				</div>
@@ -102,21 +177,7 @@
 			<button id="seguir" class="btn btn-primary btn-lg">Prosseguir</button></a>
 		</div>
 	</div>
-
-
-	<script>
-		function show(element){
-			element.className = "visivel";
-		}
-	</script>
 	
-	<script>
-		function hide(element){
-			element.className = "invisivel";
-		}
-	</script>
-
-
 	<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
     <script src="js/jquery.js"></script>
     <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->

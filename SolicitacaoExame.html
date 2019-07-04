@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
 	<!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
+	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+	<script src="js/main.js"></script>
 	<title>Solicitação de Exames</title>
 	
   </head>
@@ -37,63 +40,124 @@
 	    	</ul>
 	    </div>	
 	</nav>
-	<br/><br/><br/>
-
-	<div class="card">
-		<div class="card-body">
-			<h5 class="card-header">Solicitação de Exames</h5>
-			</br>
-			<div class="card-deck">
-				<div class="card">
-				    <div class="card-body">
-				    	<h5 class="card-title">Neuroimagem</h5>
-				    	<ul>
-							<li><input type="radio" name="grupo3" value="" onclick="hide(escondido)"> Não</li>
-							<li><input type="radio" name="grupo3" value="" onclick="show(escondido)"> Sim
-								<ul id="escondido" class="invisivel">
-									<li><input name="cboRM" type="checkbox"> RM</li>
-									<li><input name="cboTCC" type="checkbox"> TCC</li>
-								</ul>
-							</li>
-						</ul>
-				    </div>
-				 </div>
+	<br><br><br>
+<div class="form-group col-md-12 margemSuperior">
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-header">Solicitação de Exames</h5>
+				</br>
+				<div class="card-deck">
 					<div class="card">
-		    		<div class="card-body">
-		      			<h5 class="card-title">Sanguíneos</h5>
-		      			<ul>
-							<li><input type="radio" name="grupo4" value=""> Não</li>
-							<li><input type="radio" name="grupo4" value=""> Sim</li>
-					</ul>
-		   			</div>
-		  		</div>
-		  		<div class="card">
-		    		<div class="card-body">
-		      			<h5 class="card-title">De líquor</h5>
-		      			<ul>
-							<li><input type="radio" name="grupo5" value=""> Não</li>
-							<li><input type="radio" name="grupo5" value=""> Sim</li>
-					</ul>
-		    		</div>
-	  			</div>
-	  		</div>
-	  	</br>
-		  	<div class="card-deck">
-		  		<div class="card">
-		  			<div class="card-body">
-		  				<h5 class="card-title">SPECT</h5>
-		  				<ul>
-							<li><input type="radio" name="grupo6" value=""> Não</li>
-							<li><input type="radio" name="grupo6" value=""> Sim</li>
-						</ul>
+						<div class="card-body">
+							<h5 class="card-title">Neuroimagem</h5>
+							<ul class="list-unstyled">
+								<li>
+									<div class="custom-control custom-radio">
+										<input type="radio" name="customRbn" id="rbnNao" class="custom-control-input">
+										<label for="rbnNao" class="custom-control-label">Não</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-radio">
+										<input type="radio" name="customRbn" id="rbnSim" class="custom-control-input" onclick="show(escondido)">
+										<label for="rbnSim" class="custom-control-label">Sim</label>
+									</div>
+									<div class="custom-control custom-checkbox">
+										<ul id="escondido" class="invisivel">
+											<li>
+												<div class="custom-control custom-checkbox">
+													<input name="cboRM" id="cboRM" type="checkbox" class="custom-control-input"> 
+													<label for="cboRM" class="custom-control-label">RM</label>
+												</div>	
+											</li>
+											<li>
+												<div class="custom-control custom-checkbox">
+													<input name="cboTCC" id="cboTCC" type="checkbox" class="custom-control-input"> 
+													<label for="cboTCC" class="custom-control-label">TCC</label>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
 					</div>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Sanguíneos</h5>
+					<ul class="list-unstyled">
+						<li>
+							<div class="custom-control custom-radio">
+								<input type="radio" name="customRadi" id="radioNao" class="custom-control-input">
+								<label for="radioNao" class="custom-control-label">Não</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-radio">
+								<input type="radio" name="customRadi" id="radioSim" class="custom-control-input">
+								<label for="radioSim" class="custom-control-label">Sim</label>
+							</div>
+						</li>
+					</ul>
 				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">De líquor</h5>
+					<ul class="list-unstyled">
+						<li>
+							<div class="custom-control custom-radio">
+								<input type="radio" name="customRadioB" id="rdbNao" class="custom-control-input">
+								<label for="rdbNao" class="custom-control-label">Não</label>
+							</div>
+						</li>
+						<li>
+							<div class="custom-control custom-radio">
+								<input type="radio" name="customRadioB" id="rdbSim" class="custom-control-input">
+								<label for="rdbSim" class="custom-control-label">Sim</label>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+				</div>
+				</br>
+				<div class="card-deck">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">SPECT</h5>
+							<ul class="list-unstyled">
+								<li>
+									<div class="custom-control custom-radio">
+										<input type="radio" name="customRadio" id="rdNao" class="custom-control-input">
+										<label for="rdNao" class="custom-control-label">Não</label>
+									</div>
+								</li>
+								<li>
+									<div class="custom-control custom-radio">
+										<input type="radio" name="customRadio" id="rdSim" class="custom-control-input">
+										<label for="rdSim" class="custom-control-label">Sim</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
 				<div class="card">
 					<div class="card-body">
 						<h5 class="card-title">EEG</h5>
-						<ul>
-							<li><input type="radio" name="grupo7" value=""> Não</li>
-							<li><input type="radio" name="grupo7" value=""> Sim</li>
+						<ul class="list-unstyled">
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="radio" id="rbNao" class="custom-control-input">
+									<label for="rbNao" class="custom-control-label">Não</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="radio" id="rbSim" class="custom-control-input">
+									<label for="rbSim" class="custom-control-label">Sim</label>
+								</div>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -103,31 +167,14 @@
 						<input type="text" name="" class="form-control">
 					</div>
 				</div>
-			</div>	
-			
-			</br></br>		
-
-			<div class="form" style="width: 96%;">
-				<a href="Acompanhante.html">
-				<button id="seguir" class="btn btn-primary btn-lg">Solicitar</button>
+				</div>
 			</div>
-
+			<div class="btn-topo">
+				<a href="Acompanhante.html">
+				<button id="seguir" class="btn btn-primary btn-lg margemInferior">Solicitar</button>
 			</div>
 		</div>
 	</div>
-
-	
-	<script>
-		function show(element){
-			element.className = "visivel";
-		}
-	</script>
-	
-	<script>
-		function hide(element){
-			element.className = "invisivel";
-		}
-	</script>
 	
 	<script src="js/jquery.js"></script>
 

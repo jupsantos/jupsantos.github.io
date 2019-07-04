@@ -45,11 +45,36 @@
 				    <div class="card-body">
 				    	<h5 class="card-title">Instrução</h5>
 				    	<ul class="list-unstyled">
-							<li><input type="radio" name="grupo1" value="0">  Analfabeto / Primário incompleto</li>
-							<li><input type="radio" name="grupo1" value="5">  Primário completo / Ginasial incompleto</li>
-							<li><input type="radio" name="grupo1" value="10">  Ginasial completo / Colegial incompleto</li>
-							<li><input type="radio" name="grupo1" value="15">  Colegial completo / Superior incompleto</li>
-							<li><input type="radio" name="grupo1" value="21">  Superior completo</li>
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="customRadio" value="0" id="rbnAnalfabeto" class="custom-control-input">  
+									<label for="rbnAnalfabeto" class="custom-control-label">Analfabeto / Primário incompleto</label>
+								</div>	
+							</li>
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="customRadio" value="5" id="rbnPrimario" class="custom-control-input">  
+									<label for="rbnPrimario" class="custom-control-label">Primário completo / Ginasial incompleto</label>
+								</div>	
+							</li>
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="customRadio" value="10" id="rbnGinasio" class="custom-control-input">  
+									<label for="rbnGinasio" class="custom-control-label">Ginasial completo / Colegial incompleto</label>
+								</div>	
+							</li>
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="customRadio" value="15" id="rbnColegial" class="custom-control-input">  
+									<label for="rbnColegial" class="custom-control-label">Colegial completo / Superior incompleto</label>
+								</div>	
+							</li>
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="customRadio" value="21" id="rbnSuperior" class="custom-control-input">  
+									<label for="rbnSuperior" class="custom-control-label">Superior completo</label>
+								</div>	
+							</li>
 						</ul>
 				    </div>
 				 </div>
@@ -58,15 +83,33 @@
 		      			<h5 class="card-title">Itens de Posse</h5>
 							
 							<div class="form-row">
-									<label>Automóvel</label>
-									<input type="radio" id="1auto" value="4"> 1
-									<input type="radio" id="2auto" value="9"> 2
-									<input type="radio" id="3auto" value="13"> 3
-									<input type="radio" id="4auto" value="18"> 4
-									<input type="radio" id="5auto" value="22"> 5
-									<input type="radio" id="6auto" value="26"> Mais de 6
-							</div>
-		   			</div>
+									<label>Automóvel:</label>
+									<div class="custom-control custom-radio margemEsquerda">
+										<input type="radio" name="rbnCustom" id="1auto" value="4" class="custom-control-input">
+										<label for="1auto" class="custom-control-label"> 1</label>
+									</div>	
+									<div class="custom-control custom-radio margemEsquerda">
+										<input type="radio" name="rbnCustom" id="2auto" value="9" class="custom-control-input">
+										<label for="2auto" class="custom-control-label"> 2</label>
+									</div>
+									<div class="custom-control custom-radio margemEsquerda">
+										<input type="radio" name="rbnCustom" id="3auto" value="13" class="custom-control-input">
+										<label for="3auto" class="custom-control-label"> 3</label>
+									</div>
+									<div class="custom-control custom-radio margemEsquerda">
+										<input type="radio" name="rbnCustom" id="4auto" value="18" class="custom-control-input">
+										<label for="4auto" class="custom-control-label"> 4</label>
+									</div>
+									<div class="custom-control custom-radio margemEsquerda">
+										<input type="radio" name="rbnCustom" id="5auto" value="22" class="custom-control-input">
+										<label for="5auto" class="custom-control-label"> 5</label>
+									</div>
+									<div class="custom-control custom-radio margemEsquerda">
+										<input type="radio" name="rbnCustom" id="6auto" value="26" class="custom-control-input">
+										<label for="6auto" class="custom-control-label"> Mais de 6</label>
+									</div>
+								</div>	
+		   				</div>
 		  			</div>
 
 		</div>

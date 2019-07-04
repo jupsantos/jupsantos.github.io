@@ -1,35 +1,39 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
+	<link rel="shortcut icon" href="resources/icon.ico">
+
 	<!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
 	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
-
-	<script type="text/javascript">
-		jQuery(window).load(function($){
-			atualizaData();
-		});
-	</script>
+	<script src="js/main.js"></script>
 
     <title>Consulta</title>
   </head>
   <body>
 
-  	<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #e3f2fd;">
+  	<nav class="navbar navbar-expand-md navbar-light fixed-top my-nav">
+		<i class="fas fa-user-md margemDireita"></i>
 		<a class="navbar-brand">ARCO - Consulta</a>
-		
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
 					<a class="nav-link" href="">Início <span class="sr-only">(current)</span></a>
 			 	</li>
 			  	<li class="nav-item">
+					<a class="nav-link" href="QueixasAtuais.html">Queixas Atuais</a>
+			  	</li>
+              <li class="nav-item">
+					<a class="nav-link" href="AntecedentesPessoais.html">Antecedentes Pessoais</a>
+			  	</li>
+              <li class="nav-item">
 					<a class="nav-link" href="Anamnese.html">Anamnese</a>
 			  	</li>
 			  	<li class="nav-item">
@@ -49,52 +53,54 @@
 			    	</div>
 			  	</li>
 			  	<li class="nav-item topoDireito">
-					<output id="lblData" class="form-control" style="width: 380px;"></output>
+					<output id="lblData" class="form-control" ></output>
 		  		</li>
 	    	</ul>
     	</div>	
 	</nav>
 	<br/><br/><br/>
-
-	<div class="form-row quadrado">
-		<div class="form-group col-md-8">
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-header">Condição Atual do Paciente</h5>
-					</br>
-					<div class="form-group col-md-12">
-						<textarea type="text" class="form-control" placeholder="Observações a respeito do quadro atual do paciente" autocomplete="off"></textarea>
-					</div>
-					<div class="card-deck">
-						<div class="card">
-							<div class="card-body">
-								<button type="button" class="btn btn-lg btn btn btn-light btn-outline" style="width: 200px; height: 100px" onclick="show(mostrar)"><h5>Comportamentais</h5></button>
-								<div id="mostrar" class="invisivel">
-									</br>	
-									<label>Irritabilidade/agressividade</label>
-									<label>Agitação motora/inquietação</label>
-									<label>Apatia</label>
+<div class="form-row">
+	<div class="col-md-8" id="topo">
+		<div class="quadrado">
+			<div class="form-group col-md-12">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-header">Condição Atual do Paciente</h5>
+						</br>
+						<div class="form-group col-md-13">
+							<textarea type="text" class="form-control" placeholder="Observações a respeito do quadro atual do paciente" autocomplete="off"></textarea>
+						</div>
+						<div class="card-deck deck-buttoons">
+							<div class="card">
+								<div class="card-body">
+									<button type="button" class="btn btn-lg btn btn btn-light btn-outline btn-info" data-toggle="collapse" data-target="#collapseComportamentais" aria-expanded="false" aria-controls="collapseComportamentais"><h5>Comportamentais</h5></button>
+									<div id="collapseComportamentais" class="collapse">
+										</br>	
+										<label>Irritabilidade/agressividade</label>
+										<label>Agitação motora/inquietação</label>
+										<label>Apatia</label>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="card">
-							<div class="card-body">
-								<button type="button" class="btn btn-lg btn btn btn-light btn-outline" style="width: 200px; height: 100px" onclick="show(mostrar2)"><h5>Neurológicas Convencionais</h5></button>
-								<div id="mostrar2" class="invisivel">
-									</br>	
-									<label>Dor de cabeça</label>
-									<label>Problemas de equilíbrio/tontura</label>
-									<label>Dificuldade de locomoção</label>
+							<div class="card">
+								<div class="card-body">
+									<button type="button" class="btn btn-lg btn btn btn-light btn-outline btn-info"  data-toggle="collapse" data-target="#collapseNeurologica" aria-expanded="false" aria-controls="collapseNeurologica"><h5>Neurológicas Convencionais</h5></button>
+									<div id="collapseNeurologica" class="collapse">
+										</br>	
+										<label>Dor de cabeça</label>
+										<label>Problemas de equilíbrio/tontura</label>
+										<label>Dificuldade de locomoção</label>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="card">
-							<div class="card-body">
-								<button type="button" class="btn btn-lg btn btn btn-light btn-outline" style="width: 200px; height: 100px" onclick="show(mostrar3)"><h5>Cognitivas</h5></button>
-								<div id="mostrar3" class="invisivel">
-									</br>	
-									<label>Dificuldade de atenção/concentração</label>
-									<label>Dificuldade de memória</label>
+							<div class="card">
+								<div class="card-body">
+									<button type="button" class="btn btn-lg btn btn btn-light btn-outline btn-info" data-toggle="collapse" data-target="#collapseCognitiva" aria-expanded="false" aria-controls="collapseCognitiva"><h5>Cognitivas</h5></button>
+									<div id="collapseCognitiva" class="collapse">
+										</br>	
+										<label>Dificuldade de atenção/concentração</label>
+										<label>Dificuldade de memória</label>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -102,266 +108,288 @@
 				</div>
 			</div>
 		</div>
-
-		<div class="form-group col-md-3">
-			<div class="card text-center">
-				<a data-toggle="modal" data-target="#modalInfo">
-				<img class="card-img-top" src="resources/patient_login.png" alt="Imagem paciente">
-	  			<div class="card-body">
-			    	<h5 class="card-title">Nome Paciente</h5>
-			    	<h6 class="card-subtitle mb-2 text-muted">RGHC</h6>
-				</div>
-				</a>
-			</div>
-		</div>
-
-		<!-- Modal de Informações -->
-		<div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-		  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h5 class="modal-title" id="exampleModalCenterTitle">Informações Gerais do Paciente</h5>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">&times;</span>
-		        </button>
-		      </div>
-		      <div class="modal-body">
-		        <div class="form-row">
-		          <div class="form-group col-md-5">
-		            <label>Nome:</label>
-		            <output class="form-control">Pedro Henrique Silva</output>
-		          </div>
-		          <div class="form-group col-md-3">
-		            <label>RGHC:</label>
-		            <output class="form-control">9831732663</output>
-		          </div>
-		          <div class="form-group col-md-3">
-		            <label>Data de Nascimento:</label>
-		            <output class="form-control">23/06/1999</output>
-		          </div>
-		        </div>
-		      
-		        <div class="form-row">
-		          <div class="form-group col-md-3">
-		            <label>Data do TCE:</label>
-		            <output class="form-control">13/10/2012</output>
-		          </div>
-		          <div class="form-group col-md-6">
-		            <label>Causa acidente:</label>
-		            <output class="form-control">Acidente de trânsito (motorista ou passageiro)</output>
-		          </div>
-		          <div class="form-group col-md-2">
-		            <label>Tipo:</label>
-		            <output class="form-control">Civil</output>
-		          </div>
-		        </div>
-
-		        <div class="form-row">
-		          <div class="form-group col-md-3">
-		            <label>Perda de consciência:</label>
-		            <output class="form-control">24 horas</output>
-		          </div>
-		          <div class="form-group col-md-3">
-		            <label>Amnésia pós traumática:</label>
-		            <output class="form-control">1 semana</output>
-		          </div>
-		          <div class="form-group col-md-5">
-		            <label>Procedimento neurocirúrgico:</label>
-		            <output class="form-control">Descompressão do crânio</output>
-		          </div>
-		        </div>
-
-		        <div class="form-row">
-		          <div class="form-group col-md-11">
-		            <label>Medicação Atual:</label>
-		            <output class="form-control">Fenobarbital / Lamotrigina / Venlafaxina</output>
-		          </div>
-		        </div>
-
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-		         <button type="button" class="btn btn-primary" data-dismiss="modal">Perfil completo</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-
-
 	</div>
 
-	<div class="form-row quadrado">
-		<div class="form-group col-md-11">
+	<div class="form-group col-md-4">
+		<div class="card text-center">
+			<div class="card-body">
+				<div class="form-row">
+					<h5 class="card-header quadrado margemInferior">Informações Gerais do Paciente</h5>
+					  <div class="form-group col-md-6">
+						<label>Nome:</label>
+						<output class="form-control">Pedro Henrique Silva</output>
+					 </div>
+					  <div class="form-group col-md-4">
+						<label>RGHC:</label>
+						<output class="form-control">9831732663</output>
+					</div>
+					<div class="form-group col-md-6">
+						<label>Data de Nascimento:</label>
+						<output class="form-control">23/06/1999</output>
+					</div>
+					<div class="form-group col-md-4">
+						<label>Data do TCE:</label>
+						<output class="form-control">13/10/2012</output>
+					</div>  	
+					  <div class="form-group col-md-6">
+						<label>Causa acidente:</label>
+						<output class="form-control">Acidente de trabalho</output>
+					</div>
+					<div class="form-group col-md-4">
+						<label>Tipo:</label>
+						<output class="form-control">Civil</output>
+					</div>
+					  <div class="form-group col-md-6">
+						<label>Perda de consciência:</label>
+						<output class="form-control">24 horas</output>
+					</div>
+					 <div class="form-group col-md-6">
+						<label>Amnésia pós traumática:</label>
+						<output class="form-control">1 semana</output>
+					  </div>
+					<div class="form-group col-md-11 margemEsquerda">
+						<label>Procedimento neurocirúrgico:</label>
+						<output class="form-control">Descompressão do crânio</output>
+				  </div>
+				  <div class="form-group col-md-11 margemEsquerda">
+					<label>Medicação Atual:</label>
+					<output class="form-control">Fenobarbital / Lamotrigina / Venlafaxina</output>
+				  </div>
+				</div>
+			<!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Perfil completo</button>
+-->			</div>
+		</div>
+	</div>
+</div>
+
+<div class="form-group col-md-8">
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-header">Conduta médica</h5>
+		</div>
+		<div class="card-deck">
+			<div class="form-group col-md-5">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-header">Retorno</h5>
+						<div class="form-column">
+							<div class="form-group col-md-6">
+								<label for="inputRetorno">Dia da Consulta</label>
+								<input type="text" class="form-control" id="inputRetorno" placeholder="dd/mm/aaaa">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputHorario">Horário da Consulta</label>
+								<input type="text" class="form-control" id="inputHorario" placeholder="00:00">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group col-md-5">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-header">Encaminhamento</h5>
+						</br>
+						<ul class="list-unstyled"> 
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="cboTerapiaOc" id="cboTerapiaOc" class="custom-control-input">
+									<label for="cboTerapiaOc" class="custom-control-label">Terapia Ocupacional</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="cboPsicologiaFa" id="cboPsicologiaFa" class="custom-control-input">
+									<label for="cboPsicologiaFa" class="custom-control-label">Psicologia Familiar</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="cboFonoaudiologia" id="cboFonoaudiologia" class="custom-control-input">
+									<label for="cboFonoaudiologia" class="custom-control-label">Fonoaudiologia</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="cboNeuropsico" id="cboNeuropsico" class="custom-control-input">
+									<label for="cboNeuropsico" class="custom-control-label">Neuropsicologia</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="cboOftalmo" id="cboOftalmo" class="custom-control-input">
+									<label for="cboOftalmo" class="custom-control-label">Oftalmologia</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="cboAvaliacaoOptometrica" id="cboAvaliacaoOptometrica" class="custom-control-input">
+									<label for="cboAvaliacaoOptometrica" class="custom-control-label">Avaliação Optométrica</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="cboAssistenteSocial" id="cboAssistenteSocial" class="custom-control-input">
+									<label for="cboAssistenteSocial" class="custom-control-label">Assistente Social</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" name="cboOutros" id="cboOutros" class="custom-control-input" onclick="show(inescondido)">
+									<label for="cboOutros" class="custom-control-label">Outros</label>
+								</div>
+							</li>
+							<div class="invisivel" id="inescondido">
+								<input type="text" class="form-control input-outros">
+							</div>
+						</ul>
+					</div>
+				</div>
+			</div>
+		<div class="form-group col-md-12">
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-header">Conduta médica</h5>
-				</div>
+					<h5 class="card-header">Solicitação de Exames</h5>
+					</br>
 					<div class="card-deck">
-						<div class="form-group col-md-7">
-							<div class="card">
-								<div class="card-body">
-									<h5 class="card-header">Retorno</h5>
-									<div class="form-row">
-										<div class="form-group col-md-7">
-											<label for="inputMedico">Nome do Médico</label>
-											<input type="text" class="form-control" id="inputMedico">
-									</div>
-										<div class="form-group col-md-4">
-											<label for="tipo">Especialidade Médica</label>
-											<select id="tipo" class="form-control">
-												<option>Selecione</option>
-												<option>Neurologista</option>
-												<option>Psicólogo(a)</option>
-												<option>Nutricionista</option>
-											</select>
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Neuroimagem</h5>
+								<ul class="list-unstyled">
+									<li>
+										<div class="custom-control custom-radio">
+											<input type="radio" name="customRbn" id="rbnNao" class="custom-control-input">
+											<label for="rbnNao" class="custom-control-label">Não</label>
 										</div>
-										<div class="form-group col-md-4">
-											<label for="inputRetorno">Dia da Consulta</label>
-											<input type="text" class="form-control" id="inputRetorno" placeholder="dd/mm/aaaa">
+									</li>
+									<li>
+										<div class="custom-control custom-radio">
+											<input type="radio" name="customRbn" id="rbnSim" class="custom-control-input" onclick="show(escondido)">
+											<label for="rbnSim" class="custom-control-label">Sim</label>
 										</div>
-										<div class="form-group col-md-4">
-											<label for="inputHorario">Horário da Consulta</label>
-											<input type="text" class="form-control" id="inputHorario" placeholder="00:00">
+										<div class="custom-control custom-checkbox">
+											<ul id="escondido" class="invisivel">
+												<li>
+													<div class="custom-control custom-checkbox">
+														<input name="cboRM" id="cboRM" type="checkbox" class="custom-control-input"> 
+														<label for="cboRM" class="custom-control-label">RM</label>
+													</div>	
+												</li>
+												<li>
+													<div class="custom-control custom-checkbox">
+														<input name="cboTCC" id="cboTCC" type="checkbox" class="custom-control-input"> 
+														<label for="cboTCC" class="custom-control-label">TCC</label>
+													</div>
+												</li>
+											</ul>
 										</div>
-									</div>
-								</div>
+									</li>
+								</ul>
 							</div>
 						</div>
-						<div class="form-group col-md-5">
-							<div class="card">
-								<div class="card-body">
-									<h5 class="card-header">Encaminhamento</h5>
-									</br>
-									<ul class="list-unstyled"> 
-										<li><input name="cboTerapiaOc" onclick="hide(inescondido)" type="checkbox"> Terapia Ocupacional</li>
-										<li><input name="cboPsicologiaFa" onclick="hide(inescondido)" type="checkbox"> Psicologia Familiar</li>
-										<li><input name="cboFonoaudiologia" onclick="hide(inescondido)" type="checkbox"> Fonoaudiologia</li>
-										<li><input name="cboNeuropsico" onclick="hide(inescondido)" type="checkbox"> Neuropsicologia</li>
-										<li><input name="cboOftalmo" onclick="hide(inescondido)" type="checkbox"> Oftalmologia</li>
-										<li><input name="cboAvaliacaoOptometrica" onclick="hide(inescondido)" type="checkbox"> Avaliação Optométrica</li>
-										<li><input name="cboAssistenteSocial" onclick="hide(inescondido)" type="checkbox"> Assistente Social</li>
-										<li><input name="cboOutros" onclick="show(inescondido)" type="checkbox"> Outros</li>
-										<div id="inescondido" class="invisivel">
-											<input type="text" class="form-control">
-										</div>
-									</ul>
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">Sanguíneos</h5>
+						<ul class="list-unstyled">
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="customRadi" id="radioNao" class="custom-control-input">
+									<label for="radioNao" class="custom-control-label">Não</label>
 								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="customRadi" id="radioSim" class="custom-control-input">
+									<label for="radioSim" class="custom-control-label">Sim</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">De líquor</h5>
+						<ul class="list-unstyled">
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="customRadioB" id="rdbNao" class="custom-control-input">
+									<label for="rdbNao" class="custom-control-label">Não</label>
+								</div>
+							</li>
+							<li>
+								<div class="custom-control custom-radio">
+									<input type="radio" name="customRadioB" id="rdbSim" class="custom-control-input">
+									<label for="rdbSim" class="custom-control-label">Sim</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+					</div>
+					</br>
+					<div class="card-deck">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">SPECT</h5>
+								<ul class="list-unstyled">
+									<li>
+										<div class="custom-control custom-radio">
+											<input type="radio" name="customRadio" id="rdNao" class="custom-control-input">
+											<label for="rdNao" class="custom-control-label">Não</label>
+										</div>
+									</li>
+									<li>
+										<div class="custom-control custom-radio">
+											<input type="radio" name="customRadio" id="rdSim" class="custom-control-input">
+											<label for="rdSim" class="custom-control-label">Sim</label>
+										</div>
+									</li>
+								</ul>
 							</div>
 						</div>
-				<div class="form-group col-md-12">
 					<div class="card">
 						<div class="card-body">
-							<h5 class="card-header">Solicitação de Exames</h5>
-							</br>
-							<div class="card-deck">
-								<div class="card">
-				   					<div class="card-body">
-				    					<h5 class="card-title">Neuroimagem</h5>
-				    					<ul>
-											<li><input type="radio" name="grupo3" value="" onclick="hide(escondido)"> Não</li>
-											<li><input type="radio" name="grupo3" value="" onclick="show(escondido)"> Sim
-												<ul id="escondido" class="invisivel">
-												<li><input name="cboRM" type="checkbox"> RM</li>
-												<li><input name="cboTCC" type="checkbox"> TCC</li>
-												</ul>
-											</li>
-										</ul>
-				    				</div>
-				 				</div>
-							<div class="card">
-    							<div class="card-body">
-		      						<h5 class="card-title">Sanguíneos</h5>
-		      						<ul>
-										<li><input type="radio" name="grupo4" value=""> Não</li>
-										<li><input type="radio" name="grupo4" value=""> Sim</li>
-									</ul>
-		   						</div>
-		  					</div>
-		  				<div class="card">
-		    				<div class="card-body">
-		      					<h5 class="card-title">De líquor</h5>
-		      					<ul>
-									<li><input type="radio" name="grupo5" value=""> Não</li>
-									<li><input type="radio" name="grupo5" value=""> Sim</li>
-								</ul>
-		    				</div>
-	  					</div>
-	  						</div>
-  							</br>
-		  					<div class="card-deck">
-		  						<div class="card">
-						  			<div class="card-body">
-						  				<h5 class="card-title">SPECT</h5>
-						  				<ul>
-											<li><input type="radio" name="grupo6" value=""> Não</li>
-											<li><input type="radio" name="grupo6" value=""> Sim</li>
-										</ul>
+							<h5 class="card-title">EEG</h5>
+							<ul class="list-unstyled">
+								<li>
+									<div class="custom-control custom-radio">
+										<input type="radio" name="radio" id="rbNao" class="custom-control-input">
+										<label for="rbNao" class="custom-control-label">Não</label>
 									</div>
-								</div>
-							<div class="card">
-								<div class="card-body">
-									<h5 class="card-title">EEG</h5>
-									<ul>
-										<li><input type="radio" name="grupo7" value=""> Não</li>
-										<li><input type="radio" name="grupo7" value=""> Sim</li>
-									</ul>
-								</div>
-							</div>
-							<div class="card">
-								<div class="card-body">
-									<h5 class="card-title">Outro Exame</h5>
-									<input type="text" name="" class="form-control">
-								</div>
-							</div>
-							</div>
+								</li>
+								<li>
+									<div class="custom-control custom-radio">
+										<input type="radio" name="radio" id="rbSim" class="custom-control-input">
+										<label for="rbSim" class="custom-control-label">Sim</label>
+									</div>
+								</li>
+							</ul>
 						</div>
+					</div>
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Outro Exame</h5>
+							<input type="text" name="" class="form-control">
+						</div>
+					</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+</div>
 
-	<button class="btn btn-primary btn-lg quadrado">Salvar</button>
-
-	
-	<script>
-		function show(element){
-			element.className = "visivel";
-		}
-	</script>
-	
-	<script>
-		function hide(element){
-			element.className = "invisivel";
-		}
-	</script>
+	<div>
+		<a class="btn-topo" href="#topo">
+			<i class="fas fa-chevron-circle-up"></i>
+		</a>
+		<button id="seguir" class="btn btn-primary btn-lg margemInferior">Salvar</button>
+	</div>
 
   <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
     <script src="js/jquery.js"></script>
     <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
     <script src="js/bootstrap.min.js"></script>
   </body>
-
-	<script type="text/javascript">
-		function atualizaData(){
-			// Obtém a data/hora atual
-			var data = new Date();
-
-			// Guarda cada pedaço em uma variável
-			var dia     = data.getDate();           // 1-31
-			var mes     = data.getMonth();          // 0-11 (zero=janeiro)
-			var dia_sem = data.getDay();            // 0-6 (zero=domingo)
-			var ano     = data.getFullYear();
-			var dias = new Array(
-	 'Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'
-	);
-
-		// Formata a data e a hora (note o mês + 1)
-		str_data = dias[dia_sem] + ', ' + dia + '/0' + (mes+1) + '/' + ano;
-
-		document.getElementById("lblData").innerHTML = str_data;
-	}
-	</script>
-
 </html>
